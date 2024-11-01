@@ -1,12 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-random_numbers = np.random.uniform(0, 1, 1000)
+data = np.random.uniform(low=0.0, high=1.0, size=1000)
 
-plt.hist(random_numbers, bins=100, color='skyblue', edgecolor='black')
-plt.xlabel("Value")
-plt.ylabel("Frequency")
-plt.title("Histogram of Uniformly Distributed Random Numbers")
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.hist(data, bins=100, color='orange', edgecolor='black', alpha=0.7)
 
-plt.savefig("uniform_distribution_histogram.pdf")
+ax.set_xlabel("Random Value")
+ax.set_ylabel("Frequency")
+ax.set_title("Histogram of Uniformly Distributed Random Numbers")
+
+plt.savefig("uniform_random_histogram.pdf")
 plt.show()
